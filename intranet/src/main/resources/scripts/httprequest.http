@@ -1,0 +1,81 @@
+###
+GET http://localhost:8080/
+
+###
+GET http://localhost:8080/people
+
+### Alle custom queries abfragen
+GET http://localhost:8080/people/search
+
+###
+GET http://localhost:8080/people/search/findByFirstName?firstName=Hans
+
+###
+GET http://localhost:8080/people/9
+
+###
+PUT http://localhost:8080/people/9
+Content-Type: application/json
+
+{
+	"firstName": "Hans",
+	"lastName": "Vier",
+	"birthday": "1980-01-01",
+	"kundenportalBenutzer": {
+		"vorname": "KunVorname",
+		"nachname": "KunNachname",
+		"geschlecht": "M",
+		"sprache": "DE"
+	},
+	"addressList": [
+		{
+			"addressType": "OFFICE",
+			"street": "Luzernstrasse 85"
+		}
+	],
+	"communicationList": [
+		{
+			"type": "URL",
+			"content": "www.facebook.com/45699999"
+		}
+	]
+}
+
+###
+PATCH http://localhost:8080/people/9
+Content-Type: application/json
+
+{
+	"firstName": "Hans-Ueli",
+	"addressList": [
+		{
+			"addressType": "OFFICE",
+			"street": "Luzernstrasse 1"
+		}
+	]
+}
+
+###
+POST http://localhost:8080/people
+Content-Type: application/json
+
+{
+	"firstName": "Neu",
+	"lastName": "Inserto",
+	"birthday": "1960-01-01",
+	"kundenportalBenutzer": {
+		"vorname": "KunVorname",
+		"nachname": "KunNachname",
+		"geschlecht": "M",
+		"sprache": "DE"
+	}
+}
+
+### TODO save with relations
+POST http://localhost:8080/people
+
+
+
+###
+DELETE http://localhost:8080/people/12
+

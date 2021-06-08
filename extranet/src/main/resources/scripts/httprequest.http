@@ -1,0 +1,73 @@
+###
+GET http://localhost:8080/
+
+###
+GET http://localhost:8080/people
+
+### Alle custom queries abfragen
+GET http://localhost:8080/people/search
+
+###
+GET http://localhost:8080/people/search/findByFirstName?firstName=Hans
+
+###
+GET http://localhost:8080/people/4/addressList
+
+###
+GET http://localhost:8080/address/1
+
+### TODO Bidirektionale Navigation
+GET http://localhost:8080/address/1/person
+
+###
+GET http://localhost:8080/people/9
+
+###
+PUT http://localhost:8080/people/9
+Content-Type: application/json
+
+{
+	"firstName": "Hans",
+	"lastName": "Vier",
+	"birthday": "1980-01-01",
+	"kundenportalBenutzer": {
+		"vorname": "KunVorname Updated",
+		"nachname": "KunNachname",
+		"geschlecht": "M",
+		"sprache": "EN"
+	},
+	"communicationList": [
+		{
+			"type": "MOBILE",
+			"content": "+41 79 511 34 74"
+		}
+	]
+}
+
+###
+DELETE http://localhost:8080/people/4
+
+###
+POST http://localhost:8080/people
+Content-Type: application/json
+
+{
+	"firstName": "Freddy",
+	"lastName": "Quinn",
+	"birthday": "1950-01-01",
+	"kundenportalBenutzer": {
+		"vorname": "KunVorname",
+		"nachname": "KunNachname",
+		"geschlecht": "M",
+		"sprache": "DE"
+	},
+	"communicationList": [
+		{
+			"type": "MOBILE",
+			"content": "+41 79 511 34 74"
+		}
+	]
+}
+
+
+
