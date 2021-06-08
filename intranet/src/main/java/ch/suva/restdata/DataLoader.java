@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -44,6 +45,36 @@ public class DataLoader {
             Arrays.asList(setupAddress(AddressType.OFFICE, "Luzernstrasse 15")),
             Arrays.asList(setupCommunication(CommunicationType.URL, "www.facebook.com/456")),
             Arrays.asList(setupSecrets("passwort"), setupSecrets("streng geheim")));
+        
+        setupPerson("Adam", "Meier", LocalDate.of(1980, 1, 1), kun,
+            Collections.emptyList(),
+            Collections.emptyList(),
+            Collections.emptyList());
+        setupPerson("Beat", "Meierhans", LocalDate.of(1980, 1, 1), kun,
+            Collections.emptyList(),
+            Collections.emptyList(),
+            Collections.emptyList());
+        setupPerson("Christian", "Meister", LocalDate.of(1980, 1, 1), kun,
+            Collections.emptyList(),
+            Collections.emptyList(),
+            Collections.emptyList());
+        setupPerson("Dominik", "Meiermueller", LocalDate.of(1980, 1, 1), kun,
+            Collections.emptyList(),
+            Collections.emptyList(),
+            Collections.emptyList());
+        setupPerson("Emil", "Meierhuber", LocalDate.of(1980, 1, 1), kun,
+            Collections.emptyList(),
+            Collections.emptyList(),
+            Collections.emptyList());
+        setupPerson("Fritz", "Meiereier", LocalDate.of(1980, 1, 1), kun,
+            Collections.emptyList(),
+            Collections.emptyList(),
+            Collections.emptyList());
+        setupPerson("Geri", "Meierkobler", LocalDate.of(1980, 1, 1), kun,
+            Collections.emptyList(),
+            Collections.emptyList(),
+            Collections.emptyList());
+     
     }
     
     

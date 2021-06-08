@@ -8,7 +8,19 @@ GET http://localhost:8080/people
 GET http://localhost:8080/people/search
 
 ###
+GET http://localhost:8080/people/?size=2
+
+###
+GET http://localhost:8080/people/?page=0&size=2
+
+###
 GET http://localhost:8080/people/search/findByFirstName?firstName=Hans
+
+### page size 5 > navigation first, next, last
+GET http://localhost:8080/people/search/lastNameStartsWith?lastName=Mei&page=0&size=2
+
+### sorting
+GET http://localhost:8080/people/search/lastNameStartsWith?lastName=Mei&sort=firstName,desc
 
 ###
 GET http://localhost:8080/people/9
