@@ -1,5 +1,7 @@
 package ch.suva.restdata;
 
+import ch.suva.restdata.entities.AddressType;
+import ch.suva.restdata.entities.AddressTypeSerializer;
 import ch.suva.restdata.entities.KundenportalBenutzer;
 import ch.suva.restdata.entities.KundenportalBenutzerSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -41,6 +43,7 @@ public class IntranetApplication {
     public ObjectMapper customObjectMapper() { // Hint custom converters
         SimpleModule module = new SimpleModule();
         module.addSerializer(KundenportalBenutzer.class, new KundenportalBenutzerSerializer());
+        module.addSerializer(AddressType.class, new AddressTypeSerializer());
         return new ObjectMapper().registerModule(module);
     }
 }
