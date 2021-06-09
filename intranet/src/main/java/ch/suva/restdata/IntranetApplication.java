@@ -1,5 +1,9 @@
 package ch.suva.restdata;
 
+import ch.suva.restdata.entities.KundenportalBenutzer;
+import ch.suva.restdata.entities.KundenportalBenutzerSerializer;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,10 +22,10 @@ public class IntranetApplication {
         
         RepositoryRestConfiguration restConfiguration = context.getBean(RepositoryRestConfiguration.class);
         
-        // Requirement: override response body > default 204 no content
+        // Hint: override response body > default 204 no content
         restConfiguration.setReturnBodyOnUpdate(true);
         
-        // Requirement: override paging and sorting ?page=1&size=1
+        // Hint: override paging and sorting ?page=1&size=1
         restConfiguration.setMaxPageSize(5);
 //        restConfiguration.setPageParamName("p") // page=1
 //            .setLimitParamName("l") // size=1
@@ -31,5 +35,12 @@ public class IntranetApplication {
     @Bean
     public void setupData() {
         dataLoader.setup();
+    }
+    
+    @Bean
+    public ObjectMapper customObjectMapper() { // Hint custom converters
+        SimpleModule module = new SimpleModule();
+        module.addSerializer(KundenportalBenutzer.class, new KundenportalBenutzerSerializer());
+        return new ObjectMapper().registerModule(module);
     }
 }

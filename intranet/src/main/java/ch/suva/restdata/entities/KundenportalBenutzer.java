@@ -1,5 +1,6 @@
 package ch.suva.restdata.entities;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,6 +16,7 @@ import javax.persistence.Enumerated;
 @NoArgsConstructor
 @Embeddable
 @Access(AccessType.FIELD)
+@JsonSerialize(using = KundenportalBenutzerSerializer.class) // Hint: custom converter
 public class KundenportalBenutzer {
     
     private String vorname;

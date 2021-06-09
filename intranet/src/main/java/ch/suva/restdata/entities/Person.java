@@ -38,7 +38,7 @@ public class Person {
     private List<Address> addressList;
     @OneToMany
     private List<Communication> communicationList;
-    @JsonIgnore // Requirement: Hiding members
+    @JsonIgnore // Hint: Hiding members
     @OneToMany
     private List<Secrets> secretsList;
     

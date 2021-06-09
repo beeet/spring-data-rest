@@ -7,7 +7,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource(
     collectionResourceRel = "secrets",
     path = "secrets",
-    exported = false // Requirement: protect repos
+    exported = false // Hint: protect repos
 )
 public interface SecretsRepository extends PagingAndSortingRepository<Secrets, Long> {
 

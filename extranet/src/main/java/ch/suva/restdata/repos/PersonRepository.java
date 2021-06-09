@@ -9,7 +9,7 @@ import java.util.List;
 
 @RepositoryRestResource(
     collectionResourceRel = "people",
-    path = "people" // Requirement: custom relation naming
+    path = "people" // Hint: custom relation naming
 )
 public interface PersonRepository extends PagingAndSortingRepository<Person, Long> {
     

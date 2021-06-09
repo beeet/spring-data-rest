@@ -36,7 +36,7 @@ public class DataLoader {
     public void setup() {
         addressRepository.deleteAll();
         personRepository.deleteAll();
-        KundenportalBenutzer kun = new KundenportalBenutzer("KunVorname", "KunNachname", Geschlecht.M, Sprache.DE);
+        KundenportalBenutzer kun = new KundenportalBenutzer("Sepp", "Portaluser", Geschlecht.M, Sprache.DE);
         setupPerson("John", "Doe", LocalDate.of(1970, 1, 1), kun,
             Arrays.asList(setupAddress(AddressType.PRIVATE, "Obergrundstrasse 65")),
             Arrays.asList(setupCommunication(CommunicationType.MOBILE, "+41 79 511 34 74")),

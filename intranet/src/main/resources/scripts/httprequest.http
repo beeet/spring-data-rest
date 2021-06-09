@@ -83,11 +83,16 @@ Content-Type: application/json
 	}
 }
 
+###
+GET http://localhost:8080/people/search/findByFirstName?firstName=Neu
+
+### TODO does not work!?!
+DELETE http://localhost:8080/people/search/deleteByFirstName?firstName=Neu
+
+
 ### TODO save with relations
 POST http://localhost:8080/people
 
 
 
-###
-DELETE http://localhost:8080/people/12
 

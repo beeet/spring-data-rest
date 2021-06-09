@@ -12,7 +12,7 @@ import java.util.List;
 @RepositoryRestResource(
     collectionResourceRel = "communication",
     path = "communication",
-    exported = false // Requirement: protect repos
+    exported = false // Hint: protect repos
 )
 public interface CommunicationRepository extends PagingAndSortingRepository<Communication, Long> {
     
