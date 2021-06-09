@@ -1,0 +1,10 @@
+# General
+server:
+  port: 8080
+
+# logging
+logging:
+  level:
+    ch.suva.restdata: info
+    org.hibernate.SQL: debug
+    org.springframework: debug

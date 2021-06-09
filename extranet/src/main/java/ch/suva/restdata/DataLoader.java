@@ -69,7 +69,6 @@ public class DataLoader {
             .addressType(addressType)
             .street(street)
             .build();
-        addressRepository.save(address);
         return address;
     }
     
@@ -78,7 +77,6 @@ public class DataLoader {
             .type(type)
             .content(content)
             .build();
-        communicationRepository.save(communication);
         return communication;
     }
     
@@ -86,7 +84,6 @@ public class DataLoader {
         Secrets secrets = Secrets.builder()
             .text(secret)
             .build();
-        secretsRepository.save(secrets);
         return secrets;
     }
 }
