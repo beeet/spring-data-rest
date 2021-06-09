@@ -29,9 +29,6 @@ public class IntranetApplication {
         
         // Hint: override paging and sorting ?page=1&size=1
         restConfiguration.setMaxPageSize(5);
-//        restConfiguration.setPageParamName("p") // page=1
-//            .setLimitParamName("l") // size=1
-//            .setSortParamName("s");
     }
     
     @Bean
@@ -40,7 +37,7 @@ public class IntranetApplication {
     }
     
     @Bean
-    public ObjectMapper customObjectMapper() { // Hint custom converters
+    public ObjectMapper customObjectMapper() { // Hint: custom converters
         SimpleModule module = new SimpleModule();
         module.addSerializer(KundenportalBenutzer.class, new KundenportalBenutzerSerializer());
         module.addSerializer(AddressType.class, new AddressTypeSerializer());
