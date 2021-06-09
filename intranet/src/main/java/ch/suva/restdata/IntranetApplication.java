@@ -1,9 +1,10 @@
 package ch.suva.restdata;
 
+import ch.suva.restdata.converter.AddressTypeSerializer;
+import ch.suva.restdata.converter.EventHandler;
+import ch.suva.restdata.converter.KundenportalBenutzerSerializer;
 import ch.suva.restdata.entities.AddressType;
-import ch.suva.restdata.entities.AddressTypeSerializer;
 import ch.suva.restdata.entities.KundenportalBenutzer;
-import ch.suva.restdata.entities.KundenportalBenutzerSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,5 +43,10 @@ public class IntranetApplication {
         module.addSerializer(KundenportalBenutzer.class, new KundenportalBenutzerSerializer());
         module.addSerializer(AddressType.class, new AddressTypeSerializer());
         return new ObjectMapper().registerModule(module);
+    }
+    
+    @Bean
+    EventHandler personEventHandler() { // Hint: custom event handlers
+        return new EventHandler();
     }
 }

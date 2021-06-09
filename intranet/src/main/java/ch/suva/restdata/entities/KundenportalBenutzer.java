@@ -1,5 +1,6 @@
 package ch.suva.restdata.entities;
 
+import ch.suva.restdata.converter.KundenportalBenutzerSerializer;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.AllArgsConstructor;
 import lombok.Data;

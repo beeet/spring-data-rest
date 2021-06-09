@@ -117,6 +117,22 @@ Content-Type: application/json
 	]
 }
 
-###
+### EventHandler
 DELETE http://localhost:8080/people/17
+
+### exception handling
+POST http://localhost:8080/people
+Content-Type: application/json
+
+{
+	"firstName": "Neu",
+	"lastName": "Inserto",
+	"birthday": "GAGA",
+	"kundenportalBenutzer": {
+		"vorname": "Rudi",
+		"nachname": "Rüssel",
+		"geschlecht": "GAGA",
+		"sprache": "GAGA"
+	}
+}
 

@@ -1,5 +1,8 @@
-package ch.suva.restdata.entities;
+package ch.suva.restdata.converter;
 
+import ch.suva.restdata.entities.Geschlecht;
+import ch.suva.restdata.entities.KundenportalBenutzer;
+import ch.suva.restdata.entities.Sprache;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
