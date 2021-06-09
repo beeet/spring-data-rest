@@ -76,8 +76,8 @@ Content-Type: application/json
 	"lastName": "Inserto",
 	"birthday": "1960-01-01",
 	"kundenportalBenutzer": {
-		"vorname": "KunVorname",
-		"nachname": "KunNachname",
+		"vorname": "Rudi",
+		"nachname": "Rüssel",
 		"geschlecht": "M",
 		"sprache": "DE"
 	}
@@ -89,10 +89,34 @@ GET http://localhost:8080/people/search/findByFirstName?firstName=Neu
 ### TODO does not work!?!
 DELETE http://localhost:8080/people/search/deleteByFirstName?firstName=Neu
 
-
-### TODO save with relations
+### with relations
 POST http://localhost:8080/people
+Content-Type: application/json
 
+{
+	"firstName": "Neuer",
+	"lastName": "Creator",
+	"birthday": "1980-01-01",
+	"kundenportalBenutzer": {
+		"vorname": "Hansi",
+		"nachname": "Hinterseher",
+		"geschlecht": "M",
+		"sprache": "DE"
+	},
+	"addressList": [
+		{
+			"addressType": "OFFICE",
+			"street": "Zentralstrasse 2a"
+		}
+	],
+	"communicationList": [
+		{
+			"type": "URL",
+			"content": "www.suva.ch/"
+		}
+	]
+}
 
-
+###
+DELETE http://localhost:8080/people/17
 
