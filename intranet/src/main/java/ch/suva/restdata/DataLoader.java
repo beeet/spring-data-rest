@@ -1,14 +1,6 @@
 package ch.suva.restdata;
 
-import ch.suva.restdata.entities.Address;
-import ch.suva.restdata.entities.AddressType;
-import ch.suva.restdata.entities.Communication;
-import ch.suva.restdata.entities.CommunicationType;
-import ch.suva.restdata.entities.Geschlecht;
-import ch.suva.restdata.entities.KundenportalBenutzer;
-import ch.suva.restdata.entities.Person;
-import ch.suva.restdata.entities.Secrets;
-import ch.suva.restdata.entities.Sprache;
+import ch.suva.restdata.entities.*;
 import ch.suva.restdata.repos.AddressRepository;
 import ch.suva.restdata.repos.CommunicationRepository;
 import ch.suva.restdata.repos.PersonRepository;
@@ -83,6 +75,7 @@ public class DataLoader {
                                List<Communication> comList,
                                List<Secrets> secretsList) {
         Person person = Person.builder()
+            .title(Title.builder().title("Herr").academicTitle("").build())
             .firstName(first)
             .lastName(last)
             .birthday(birth)

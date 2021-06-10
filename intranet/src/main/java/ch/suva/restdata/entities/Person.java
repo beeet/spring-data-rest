@@ -1,6 +1,7 @@
 package ch.suva.restdata.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -33,6 +34,8 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     
+    @JsonUnwrapped // Remark: deserialized on person level
+    private Title title;
     private String firstName;
     private String lastName;
     private LocalDate birthday;
