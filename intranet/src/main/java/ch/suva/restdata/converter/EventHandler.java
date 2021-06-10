@@ -2,7 +2,9 @@ package ch.suva.restdata.converter;
 
 import ch.suva.restdata.entities.Address;
 import ch.suva.restdata.entities.Person;
+import ch.suva.restdata.service.PersonServiceStrategyFactory;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.core.annotation.HandleBeforeDelete;
 import org.springframework.data.rest.core.annotation.RepositoryEventHandler;
 
@@ -10,9 +12,14 @@ import org.springframework.data.rest.core.annotation.RepositoryEventHandler;
 @RepositoryEventHandler
 public class EventHandler {
     
+    @Autowired
+    private PersonServiceStrategyFactory factory;
+    
     @HandleBeforeDelete // Remark: geht zuerst in den Event Handler und dann auf die Enity#PreRemove
     public void handleBeforeDeleteOnPerson(Person person) {
         log.info("HandleBeforeDelete on Person", person);
+        
+        factory.getInstance(person.getKundenportalBenutzer()).execute();
     }
     
     @HandleBeforeDelete
