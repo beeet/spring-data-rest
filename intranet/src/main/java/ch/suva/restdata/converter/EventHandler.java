@@ -10,7 +10,7 @@ import org.springframework.data.rest.core.annotation.RepositoryEventHandler;
 @RepositoryEventHandler
 public class EventHandler {
     
-    @HandleBeforeDelete
+    @HandleBeforeDelete // Remark: geht zuerst in den Event Handler und dann auf die Enity#PreRemove
     public void handleBeforeDeleteOnPerson(Person person) {
         log.info("HandleBeforeDelete on Person", person);
     }

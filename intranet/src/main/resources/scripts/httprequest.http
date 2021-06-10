@@ -23,10 +23,10 @@ GET http://localhost:8080/people/search/lastNameStartsWith?lastName=Mei&page=0&s
 GET http://localhost:8080/people/search/lastNameStartsWith?lastName=Mei&sort=firstName,desc
 
 ###
-GET http://localhost:8080/people/9
+GET http://localhost:8080/people/5
 
 ###
-PUT http://localhost:8080/people/9
+PUT http://localhost:8080/people/5
 Content-Type: application/json
 
 {
@@ -36,32 +36,32 @@ Content-Type: application/json
 	"kundenportalBenutzer": {
 		"vorname": "KunVorname",
 		"nachname": "KunNachname",
-		"geschlecht": "M",
-		"sprache": "DE"
+		"geschlecht": "maennlich",
+		"sprache": "englisch"
 	},
 	"addressList": [
 		{
-			"addressType": "OFFICE",
+			"addressType": "privat",
 			"street": "Luzernstrasse 85"
 		}
 	],
 	"communicationList": [
 		{
-			"type": "URL",
+			"type": "web",
 			"content": "www.facebook.com/45699999"
 		}
 	]
 }
 
 ###
-PATCH http://localhost:8080/people/9
+PATCH http://localhost:8080/people/5
 Content-Type: application/json
 
 {
 	"firstName": "Hans-Ueli",
 	"addressList": [
 		{
-			"addressType": "OFFICE",
+			"addressType": "geschaeft",
 			"street": "Luzernstrasse 1"
 		}
 	]
@@ -78,8 +78,8 @@ Content-Type: application/json
 	"kundenportalBenutzer": {
 		"vorname": "Rudi",
 		"nachname": "Rüssel",
-		"geschlecht": "M",
-		"sprache": "DE"
+		"geschlecht": "maennlich",
+		"sprache": "deutsch"
 	}
 }
 
@@ -100,18 +100,18 @@ Content-Type: application/json
 	"kundenportalBenutzer": {
 		"vorname": "Hansi",
 		"nachname": "Hinterseher",
-		"geschlecht": "M",
-		"sprache": "DE"
+		"geschlecht": "maennlich",
+		"sprache": "deutsch"
 	},
 	"addressList": [
 		{
-			"addressType": "OFFICE",
+			"addressType": "geschaeft",
 			"street": "Zentralstrasse 2a"
 		}
 	],
 	"communicationList": [
 		{
-			"type": "URL",
+			"type": "web",
 			"content": "www.suva.ch/"
 		}
 	]
