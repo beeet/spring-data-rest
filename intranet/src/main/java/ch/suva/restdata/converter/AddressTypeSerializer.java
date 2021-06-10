@@ -13,7 +13,7 @@ public class AddressTypeSerializer extends JsonSerializer<AddressType> {
     
     @Override
     public void serialize(AddressType value, JsonGenerator jgen, SerializerProvider provider) throws IOException, JsonProcessingException {
-        jgen.writeObject(Joiner.on(" ").join(">", value.name().toLowerCase(), "<"));
+        jgen.writeObject(Joiner.on(" ").join(">", value, "<"));
     }
     
 }

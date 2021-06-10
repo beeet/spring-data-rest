@@ -11,12 +11,12 @@ import org.springframework.data.rest.core.annotation.RepositoryEventHandler;
 public class EventHandler {
     
     @HandleBeforeDelete
-    public void handlePersonDelete(Person person) {
+    public void handleBeforeDeleteOnPerson(Person person) {
         log.info("HandleBeforeDelete on Person", person);
     }
     
     @HandleBeforeDelete
-    public void handleAddressDelete(Address address) {
+    public void handleBeforeDeleteOnAddress(Address address) {
         log.info("HandleBeforeDelete on Address", address);
     }
     

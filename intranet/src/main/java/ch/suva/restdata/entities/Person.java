@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
@@ -15,9 +16,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.PreRemove;
 import java.time.LocalDate;
 import java.util.List;
 
+@Slf4j
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
@@ -39,8 +42,12 @@ public class Person {
     private List<Address> addressList;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Communication> communicationList;
-    @JsonIgnore // Hint: Hiding members
+    @JsonIgnore // Remark:  Hiding members
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Secrets> secretsList;
     
+    @PreRemove
+    public void preRemove() {
+        log.info("PreRemove on Person");
+    }
 }

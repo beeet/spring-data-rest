@@ -12,7 +12,7 @@ import java.util.List;
 @RepositoryRestResource(
     collectionResourceRel = "address",
     path = "address",
-    exported = false // Hint: protect repos
+    exported = false // Remark:  protect repos
 )
 public interface AddressRepository extends PagingAndSortingRepository<Address, Long> {
     

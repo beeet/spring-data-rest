@@ -17,7 +17,7 @@ import javax.persistence.Enumerated;
 @NoArgsConstructor
 @Embeddable
 @Access(AccessType.FIELD)
-@JsonSerialize(using = KundenportalBenutzerSerializer.class) // Hint: custom converter
+@JsonSerialize(using = KundenportalBenutzerSerializer.class) // Remark:  custom converter
 public class KundenportalBenutzer {
     
     private String vorname;

@@ -25,10 +25,10 @@ public class IntranetApplication {
         
         RepositoryRestConfiguration restConfiguration = context.getBean(RepositoryRestConfiguration.class);
         
-        // Hint: override response body > default 204 no content
+        // Remark:  override response body > default 204 no content
         restConfiguration.setReturnBodyOnUpdate(true);
         
-        // Hint: override paging and sorting ?page=1&size=1
+        // Remark:  override paging and sorting ?page=1&size=1
         restConfiguration.setMaxPageSize(5);
     }
     
@@ -38,7 +38,7 @@ public class IntranetApplication {
     }
     
     @Bean
-    public ObjectMapper customObjectMapper() { // Hint: custom converters
+    public ObjectMapper customObjectMapper() { // Remark:  custom converters
         SimpleModule module = new SimpleModule();
         module.addSerializer(KundenportalBenutzer.class, new KundenportalBenutzerSerializer());
         module.addSerializer(AddressType.class, new AddressTypeSerializer());
@@ -46,7 +46,7 @@ public class IntranetApplication {
     }
     
     @Bean
-    EventHandler personEventHandler() { // Hint: custom event handlers
+    EventHandler personEventHandler() { // Remark:  custom event handlers
         return new EventHandler();
     }
 }

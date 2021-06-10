@@ -13,7 +13,7 @@ import java.util.List;
 
 @RepositoryRestResource(
     collectionResourceRel = "people",
-    path = "people" // Hint: custom relation naming
+    path = "people" // Remark:  custom relation naming
 )
 public interface PersonRepository extends JpaRepository<Person, Long> {
     
@@ -22,7 +22,7 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
     List<Person> findByFirstName(@Param("firstName") String firstName);
     
     @RestResource(path = "lastNameStartsWith", rel = "lastNameStartsWith")
-    Page findByLastNameStartsWith(@Param("lastName") String lastName, Pageable p); // Hint: override default
+    Page findByLastNameStartsWith(@Param("lastName") String lastName, Pageable p); // Remark:  override default
     
     @Transactional
     List<Person> deleteByFirstName(@Param("firstName") String firstName); // TODO does not work!?!
