@@ -11,19 +11,24 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+// @Secured("ROLE_USER") Remark: security check on class und method level
 @RepositoryRestResource(
     collectionResourceRel = "people",
     path = "people" // Remark:  custom relation naming
 )
 public interface PersonRepository extends JpaRepository<Person, Long> {
     
+    // @Secured("ROLE_USER")
     List<Person> findByLastName(@Param("lastName") String lastName);
     
+    // @Secured("ROLE_USER")
     List<Person> findByFirstName(@Param("firstName") String firstName);
     
+    // @Secured("ROLE_USER")
     @RestResource(path = "lastNameStartsWith", rel = "lastNameStartsWith")
     Page findByLastNameStartsWith(@Param("lastName") String lastName, Pageable p); // Remark:  override default
     
+    // @Secured("ROLE_ADMIN")
     @Transactional
     List<Person> deleteByFirstName(@Param("firstName") String firstName); // TODO does not work!?!
     
