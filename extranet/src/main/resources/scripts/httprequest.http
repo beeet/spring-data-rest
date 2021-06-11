@@ -5,7 +5,10 @@ GET http://localhost:8081/
 GET http://localhost:8081/profile
 
 ###
-GET http://localhost:8081/profile/communication
+GET http://localhost:8081/people/
+
+###
+GET http://localhost:8081/profile/communication/
 
 ### Alle custom queries abfragen
 GET http://localhost:8081/people/search
@@ -13,4 +16,21 @@ GET http://localhost:8081/people/search
 ### Alle custom queries abfragen
 GET http://localhost:8081/communication/search
 
+###
+PATCH http://localhost:8081/people/1
+Content-Type: application/json
 
+{
+	"firstName": "Neuer"
+}
+
+###
+GET http://localhost:8081/people/5/addressList
+
+###
+PATCH http://localhost:8081/people/5/addressList
+Content-Type: application/json
+
+{
+	"street": "Patched street"
+}
