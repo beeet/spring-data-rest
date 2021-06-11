@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
@@ -39,7 +40,7 @@ public class Person {
     private List<Address> addressList;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Communication> communicationList;
-    @JsonIgnore // Hint: Hiding members
+    @RestResource(exported = false) // Remark: avoid exponation
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Secrets> secretsList;
     

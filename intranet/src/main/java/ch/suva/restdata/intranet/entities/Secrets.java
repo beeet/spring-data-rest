@@ -1,5 +1,6 @@
 package ch.suva.restdata.intranet.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,6 +24,9 @@ public class Secrets {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private String text;
+    private String url;
+    private String user;
+    @JsonIgnore // Hint: Hiding members
+    private String password;
     
 }

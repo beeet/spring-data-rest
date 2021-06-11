@@ -82,7 +82,9 @@ public class DataLoader {
     
     private Secrets setupSecrets(String secret) {
         Secrets secrets = Secrets.builder()
-            .text(secret)
+            .url("www.suva.ch/login")
+            .user("sbs@suva.ch")
+            .password(secret)
             .build();
         return secrets;
     }
