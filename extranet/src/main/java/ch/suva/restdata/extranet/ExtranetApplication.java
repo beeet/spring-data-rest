@@ -6,6 +6,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import javax.annotation.PostConstruct;
+
 @SpringBootApplication
 public class ExtranetApplication {
     
@@ -16,8 +18,8 @@ public class ExtranetApplication {
         SpringApplication.run(ExtranetApplication.class, args);
     }
     
-    @Bean
-    public void setupData() {
+    @PostConstruct
+    public void init() {
         dataLoader.setup();
     }
     

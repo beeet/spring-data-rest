@@ -14,6 +14,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 
+import javax.annotation.PostConstruct;
+
 @SpringBootApplication
 public class IntranetApplication {
     
@@ -32,8 +34,8 @@ public class IntranetApplication {
         restConfiguration.setMaxPageSize(5);
     }
     
-    @Bean
-    public void setupData() {
+    @PostConstruct
+    public void init() {
         dataLoader.setup();
     }
     
